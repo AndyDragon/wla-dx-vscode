@@ -1,6 +1,6 @@
 {
     "name": "wla-dx-vscode",
-    "publisher": "KrocCamen/AndyDragon",
+    "publisher": "KrocCamen and AndyDragon",
     "author": {
         "name": "Kroc Camen",
         "email": "kroc@camendesign.com",
@@ -18,7 +18,7 @@
       },
     "displayName": "WLA-DX for VSCode",
     "description": "VSCode language support for WLA-DX assembler; WLA DX - Yet Another GB-Z80/Z80/6502/65C02/65CE02/6510/65816/6800/6801/6809/8008/8080/HUC6280/SPC-700 Multi Platform Cross Assembler Package",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "engines": {
         "vscode": "^1.30.0"
     },
@@ -49,6 +49,18 @@
                     ".i"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "wla-dx-ad1251asm",
+                "aliases": [
+                    "WLA-DX-AD1251",
+                    "wla-dx-ad1251asm"
+                ],
+                "extensions": [
+                    ".asm",
+                    ".i"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
@@ -70,6 +82,11 @@
             }
         ],
         "themes": [
+            {
+                "label": "WLA-DX Dark+",
+                "uiTheme": "vs-dark",
+                "path": "./themes/dark_plus_wla.json"
+            },
             {
                 "label": "WLA-DX Light",
                 "uiTheme": "vs",

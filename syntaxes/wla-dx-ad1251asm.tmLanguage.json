@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "wla-dx-asm",
+	"name": "wla-dx-ad1251asm",
 	"patterns": [{
 		"include": "#asm"
 	},{
@@ -332,37 +332,29 @@
 				"comment"	: "AD1251 processor mnemonics",
 				"match"		: "(?<=\\s)(?i)(abs|add[c]?|and|asl|asr|call|clc|cmp|dec|inc|in|jmp|neg|nop|not|or|out|pop|push|ret|rol|ror|sec|shl|shr|stp|sub[b]?|sys|xor|zero)\\b",
 				"captures"	: {
-					"1" 	: { "name" : "support.function.wla-dx-asm" }
+					"1" 	: { "name" : "support.opcode.wla-dx-asm" }
 				}
 			},{
 				"comment"	: "AD1251 processor mnemonics w/ conditionals",
 				"match"		: "(?<=\\s)(?i)(br|mv)(\\.(?:a|c|z|e|z|nc|ne|nz|lt|lte|gt|gte))?\\b",
 				"captures"	: {
-					"1"		: { "name" : "support.function.wla-dx-asm" },
-					"2" 	: { "name" : "storage.modifier.wla-dx-asm" }
+					"1"		: { "name" : "support.opcode.wla-dx-asm" },
+					"2" 	: { "name" : "support.opcodemodifier.wla-dx-asm" }
 				}
 			},{
 				"comment"	: "AD1251 processor mnemonics w/ sizing",
 				"match"		: "(?<=\\s)(?i)([s]?ld|[s]?st)(\\.(?:lb|ub|w))?\\b",
 				"captures"	: {
-					"1" 	: { "name" : "support.function.wla-dx-asm" },
-					"2"		: { "name" : "storage.modifier.wla-dx-asm" }
+					"1" 	: { "name" : "support.opcode.wla-dx-asm" },
+					"2"		: { "name" : "support.opcodemodifier.wla-dx-asm" }
 				}
 			}]
 		},
 		"symbols"	: {
 			"patterns"	: [{
-				"name"		: "support.variable.register.shadow.wla-dx-asm",
-				"comment"	: "Z80 shadow registers.",
-				"match"		: "(?<=\\W)(?:AF?|BC?|C|DE?|E|HL?|L)'"
-			},{
 				"name"		: "support.variable.register.wla-dx-asm",
-				"comment"	: "Z80 registers.",
-				"match"		: "(?<=\\W)(?:AF?|BC?|C|DE?|E|HL?|L|[IR]|IX[HL]?|IY[HL]?|SP)\\b"
-			},{
-				"name"		: "support.variable.register.wla-dx-asm",
-				"comment"	: "6502/6510/65C02 registers.",
-				"match"		: "(?<=\\W)(?i:a|x|y)\\b"
+				"comment"	: "AD1251 registers.",
+				"match"		: "(?<=\\W)(?i:r(?:1[0-5]?|[2-9]|0))\\b"
 			},{
 				"name" 		: "support.variable",
 				"match" 	: "(?<=\\W)(?i)_out\\b"
