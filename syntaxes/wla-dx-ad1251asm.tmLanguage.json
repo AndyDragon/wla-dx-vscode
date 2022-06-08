@@ -330,7 +330,7 @@
 			"comment"	: "Processor mnemonics",
 			"patterns"	: [{
 				"comment"	: "AD1251 processor mnemonics",
-				"match"		: "(?<=\\s)(?i)(abs|add[c]?|and|asl|asr|call|clc|cmp|dec|inc|in|jmp|neg|nop|not|or|out|pop|push|ret|rol|ror|sec|shl|shr|stp|sub[b]?|sys|xor|zero)\\b",
+				"match"		: "(?<=\\s)(?i)(abs|add[c]?|and|asl|asr|call|clc|cmp|dec|inc|in|jmp|lcall|ljmp|lret|neg|nop|not|or|out|pop|push|ret|rol|ror|sec|setdbr|shl|shr|stp|sub[b]?|sys|xor|zero)\\b",
 				"captures"	: {
 					"1" 	: { "name" : "support.opcode.wla-dx-asm" }
 				}
